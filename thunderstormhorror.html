@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FRCTeach</title>
+    <link rel="icon" type="image/png" href="xvilogo2.png">
+    <title>XVI Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -12,10 +13,23 @@
   </head>
   <body style="background-color: var(--color-bg)">
     <div id="header"></div>
-    <main class="page-content">
-    <h1>Thundersorm: Horror</h1>
-      <iframe frameborder="0" src="https://itch.io/embed-upload/18653358?color=333333" allowfullscreen="" width="1600" height="820"><a href="https://xvi-studios.itch.io/thunderstorm">Play Thunderstorm v1.1 : Horror Experience on itch.io</a></iframe>
-    </main>
+    <div class="container-invisible">
+    <div class="container-small">
+      <h2>Game blocked / not loading?</h2>
+    <a class="pinned-box" href="https://xvi-studios.itch.io/thunderstorm" target="_blank" rel="noopener">
+      <h5>Click here to open it directly on Itch.io</h5>
+    </a>
+    <a class="pinned-box" href="https://thunderstorm.xvi-studios.workers.dev/" target="_blank" rel="noopener">
+      <h5>Or click here to open a seperate hosted version </h5>
+    </a>
+    </div>
+    
+      <main class="page-content" style="display:flex; flex-direction:column; align-items:center; width:100%; box-sizing:border-box;">
+        <h1 style="float:none; width:auto;">Thunderstorm Horror</h1>
+        <iframe frameborder="0" src="https://itch.io/embed-upload/18653358?color=333333" allowfullscreen="" style="width:100%; max-width:1600px; aspect-ratio:1600/820; height:auto; border:0;"><a href="https://xvi-studios.itch.io/thunderstorm">Play Thunderstorm v1.1 : Horror Experience on itch.io</a></iframe>
+      </main>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
