@@ -108,15 +108,6 @@ body {
 .container-expandable summary::-webkit-details-marker {
   display: none;
 }
-.container-expandable summary::after {
-  content: "+";
-  position: absolute;
-  right: 0;
-  transition: transform 0.3s ease;
-}
-.container-expandable[open] summary::after {
-  transform: rotate(45deg);
-}
 .container-expandable::details-content {
   height: 0;
   opacity: 0;
