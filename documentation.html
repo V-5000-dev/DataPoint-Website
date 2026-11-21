@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="xvilogo2.png">
+    <title>XVI Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body style="background-color: var(--color-bg)">
+    <div id="header"></div>
+    <main class="page-content-dropdown">
+        <header class="docs-intro">
+            <h1>Command Documentation</h1>
+            <p>Every command works as a slash command and as a prefix command. In the examples below, replace <code>&lt;prefix&gt;</code> with your server's prefix. Parameters in <code>[square brackets]</code> are optional.</p>
+        </header>
+
+        <!-- ================= General ================= -->
+        <section class="docs-section" id="general">
+            <h2>General</h2>
+
+            <details class="container-expandable" id="ping">
+                <summary>
+                    <code class="cmd-name">/ping</code>
+                    <span class="cmd-desc">Check that DataPoint is online</span>
+                    <span class="perm perm--everyone">Everyone</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows the bot's latency.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/ping
+&lt;prefix&gt;ping</code></pre>
+
+                    <h4>Parameters</h4>
+                    <p>None.</p>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="prefix">
+                <summary>
+                    <code class="cmd-name">/prefix</code>
+                    <span class="cmd-desc">Show this server's command prefix</span>
+                    <span class="perm perm--everyone">Everyone</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows the server's prefix.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/prefix
+&lt;prefix&gt;prefix</code></pre>
+
+                    <h4>Parameters</h4>
+                    <p>None.</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- ================= Server setup ================= -->
+        <section class="docs-section" id="server-setup">
+            <h2>Server setup</h2>
+
+            <details class="container-expandable" id="server-settings">
+                <summary>
+                    <code class="cmd-name">/server-settings</code>
+                    <span class="cmd-desc">Configure DataPoint for your server</span>
+                    <span class="perm perm--server">Server admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Opens the server settings menu.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/server-settings
+&lt;prefix&gt;server-settings</code></pre>
+
+                    <h4>Parameters</h4>
+                    <p>None.</p>
+
+                    <h4>Pages</h4>
+                    <ol class="docs-steps">
+                        <li><strong>Server admin roles:</strong> roles with full permissions on every table.</li>
+                        <li><strong>Member log channel:</strong> where member commands are logged.</li>
+                        <li><strong>Manager log channel:</strong> where manager commands are logged.</li>
+                        <li><strong>Admin log channel:</strong> where admin commands are logged.</li>
+                        <li><strong>Failed attempts:</strong> log commands used without permission.</li>
+                        <li><strong>Backups:</strong> where daily backups are sent.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="set-prefix">
+                <summary>
+                    <code class="cmd-name">/set-prefix</code>
+                    <span class="cmd-desc">Change the command prefix</span>
+                    <span class="perm perm--server">Server admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Changes the server's prefix.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/set-prefix prefix:&lt;prefix&gt; [include_space:True]
+&lt;prefix&gt;set-prefix &lt;new prefix&gt; [true]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>prefix</code></td><td>Yes</td><td>The new prefix (max 3 characters).</td></tr>
+                            <tr><td><code>include_space</code></td><td>No</td><td>Adds a space after the prefix.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </section>
+
+        <!-- ================= Tables ================= -->
+        <section class="docs-section" id="tables">
+            <h2>Tables</h2>
+
+            <details class="container-expandable" id="create-table">
+                <summary>
+                    <code class="cmd-name">/create-table</code>
+                    <span class="cmd-desc">Create a new table</span>
+                    <span class="perm perm--server">Server admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Creates a new table.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/create-table name:&lt;table name&gt;
+&lt;prefix&gt;create-table &lt;table name&gt;</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table's name (max 50 characters).</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="table-settings">
+                <summary>
+                    <code class="cmd-name">/table-settings</code>
+                    <span class="cmd-desc">Configure a table</span>
+                    <span class="perm perm--server">Server admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Opens the settings menu for a table.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/table-settings table_name:&lt;table name&gt;
+&lt;prefix&gt;table-settings &lt;table name&gt;</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>table_name</code></td><td>Yes</td><td>The table to configure.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Pages</h4>
+                    <ol class="docs-steps">
+                        <li><strong>Rename table:</strong> change the table's name.</li>
+                        <li><strong>Manage columns:</strong> add or remove columns.</li>
+                        <li><strong>Member roles:</strong> can request rows and view their own.</li>
+                        <li><strong>Manager roles:</strong> can review requests and view the whole table.</li>
+                        <li><strong>Admin roles:</strong> can add and remove any row.</li>
+                        <li><strong>Request channel:</strong> where requests are sent.</li>
+                        <li><strong>Request pings:</strong> ping managers on new requests.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="delete-table">
+                <summary>
+                    <code class="cmd-name">/delete-table</code>
+                    <span class="cmd-desc">Delete a table and all its rows</span>
+                    <span class="perm perm--server">Server admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Permanently deletes a table.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/delete-table name:&lt;table name&gt;
+&lt;prefix&gt;delete-table &lt;table name&gt;</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to delete.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </section>
+
+        <!-- ================= Adding rows ================= -->
+        <section class="docs-section" id="adding-rows">
+            <h2>Adding rows</h2>
+
+            <details class="container-expandable" id="add-row-by-request">
+                <summary>
+                    <code class="cmd-name">/add-row-by-request</code>
+                    <span class="cmd-desc">Request to add or update your row</span>
+                    <span class="perm perm--member">Member</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Requests to add or update your row. A manager must approve it.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/add-row-by-request name:&lt;table name&gt;
+&lt;prefix&gt;add-row-by-request &lt;table name&gt; &lt;value 1&gt; &lt;value 2&gt; ...</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to add your row to.</td></tr>
+                            <tr><td><code>values</code></td><td>Prefix only</td><td>One value per column, in order.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="add-row-by-user">
+                <summary>
+                    <code class="cmd-name">/add-row-by-user</code>
+                    <span class="cmd-desc">Add or update anyone's row directly</span>
+                    <span class="perm perm--admin">Table admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Adds or updates a user's row without approval.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/add-row-by-user name:&lt;table name&gt; user:&lt;@user&gt;
+&lt;prefix&gt;add-row-by-user &lt;table name&gt; &lt;@user&gt; &lt;value 1&gt; &lt;value 2&gt; ...</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to add the row to.</td></tr>
+                            <tr><td><code>user</code></td><td>Yes</td><td>The user whose row to add or update.</td></tr>
+                            <tr><td><code>values</code></td><td>Prefix only</td><td>One value per column, in order.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </section>
+
+        <!-- ================= Viewing rows ================= -->
+        <section class="docs-section" id="viewing-rows">
+            <h2>Viewing rows</h2>
+            
+            <details class="container-expandable" id="view-row">
+                <summary>
+                    <code class="cmd-name">/view-row</code>
+                    <span class="cmd-desc">View your own row</span>
+                    <span class="perm perm--member">Member</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows your row.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/view-row name:&lt;table name&gt; [view_raw:True]
+&lt;prefix&gt;view-row &lt;table name&gt; [file]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to look in.</td></tr>
+                            <tr><td><code>view_raw</code></td><td>No</td><td>Send the result as a <code>.txt</code> file.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="view-row-by-user">
+                <summary>
+                    <code class="cmd-name">/view-row-by-user</code>
+                    <span class="cmd-desc">View a specific user's row</span>
+                    <span class="perm perm--manager">Manager</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows a user's row.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/view-row-by-user name:&lt;table name&gt; user:&lt;@user&gt; [view_raw:True]
+&lt;prefix&gt;view-row-by-user &lt;table name&gt; &lt;@user&gt; [file]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to look in.</td></tr>
+                            <tr><td><code>user</code></td><td>Yes</td><td>The user whose row to show.</td></tr>
+                            <tr><td><code>view_raw</code></td><td>No</td><td>Send the result as a <code>.txt</code> file.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="view-row-by-id">
+                <summary>
+                    <code class="cmd-name">/view-row-by-id</code>
+                    <span class="cmd-desc">View a row by its number</span>
+                    <span class="perm perm--manager">Manager</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows a row by its number.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/view-row-by-id name:&lt;table name&gt; row:&lt;number&gt; [view_raw:True]
+&lt;prefix&gt;view-row-by-id &lt;table name&gt; &lt;number&gt; [file]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to look in.</td></tr>
+                            <tr><td><code>row</code></td><td>Yes</td><td>The row number.</td></tr>
+                            <tr><td><code>view_raw</code></td><td>No</td><td>Send the result as a <code>.txt</code> file.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="view-row-by-value">
+                <summary>
+                    <code class="cmd-name">/view-row-by-value</code>
+                    <span class="cmd-desc">Search a table for a value</span>
+                    <span class="perm perm--manager">Manager</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Finds rows containing the search text.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/view-row-by-value name:&lt;table name&gt; query:&lt;text&gt; [view_raw:True]
+&lt;prefix&gt;view-row-by-value &lt;table name&gt; &lt;text&gt; [file]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to search.</td></tr>
+                            <tr><td><code>query</code></td><td>Yes</td><td>The text to search for.</td></tr>
+                            <tr><td><code>view_raw</code></td><td>No</td><td>Send the result as a <code>.txt</code> file.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="view-table">
+                <summary>
+                    <code class="cmd-name">/view-table</code>
+                    <span class="cmd-desc">View every row in a table</span>
+                    <span class="perm perm--manager">Manager</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Shows every row in the table.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/view-table name:&lt;table name&gt; [view_raw:True]
+&lt;prefix&gt;view-table &lt;table name&gt; [file]</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to show.</td></tr>
+                            <tr><td><code>view_raw</code></td><td>No</td><td>Send the result as a <code>.txt</code> file.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </section>
+
+        <!-- ================= Removing rows ================= -->
+        <section class="docs-section" id="removing-rows">
+            <h2>Removing rows</h2>
+
+            <details class="container-expandable" id="remove-row-by-user">
+                <summary>
+                    <code class="cmd-name">/remove-row-by-user</code>
+                    <span class="cmd-desc">Remove a user's row</span>
+                    <span class="perm perm--admin">Table admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Removes a user's row.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/remove-row-by-user name:&lt;table name&gt; user:&lt;@user&gt;
+&lt;prefix&gt;remove-row-by-user &lt;table name&gt; &lt;@user&gt;</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to remove the row from.</td></tr>
+                            <tr><td><code>user</code></td><td>Yes</td><td>The user whose row to remove.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+
+            <details class="container-expandable" id="remove-row-by-id">
+                <summary>
+                    <code class="cmd-name">/remove-row-by-id</code>
+                    <span class="cmd-desc">Remove a row by its number</span>
+                    <span class="perm perm--admin">Table admin</span>
+                </summary>
+                <div class="expandable-body">
+                    <p>Removes a row by its number.</p>
+
+                    <h4>Usage</h4>
+                    <pre><code>/remove-row-by-id name:&lt;table name&gt; row:&lt;number&gt;
+&lt;prefix&gt;remove-row-by-id &lt;table name&gt; &lt;number&gt;</code></pre>
+
+                    <h4>Parameters</h4>
+                    <table class="docs-table">
+                        <thead>
+                            <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>name</code></td><td>Yes</td><td>The table to remove the row from.</td></tr>
+                            <tr><td><code>row</code></td><td>Yes</td><td>The row number.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
