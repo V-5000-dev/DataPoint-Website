@@ -98,7 +98,7 @@ body {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.25rem 1rem;
-  padding-right: 2rem; /* room for the +/× indicator */
+  padding-right: 2rem; 
   cursor: pointer;
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -131,15 +131,12 @@ body {
   padding-top: 0.75rem;
   text-align: left;
 }
-/* Headings are centered site-wide; keep them left-aligned inside expandable boxes. */
 .expandable-body :is(h1, h2, h3, h4, h5, h6) { text-align: left; }
 .expandable-body > :first-child { margin-top: 0; }
 
-/* ---------- Documentation page ---------- */
 :root {
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --color-muted-light: #a3a7b3; /* readable secondary text */
-}
+  --color-muted-light: #a3a7b3; 
 .docs-intro {
   width: min(1100px, 90%);
   margin: 0 auto 1.5rem;
@@ -153,7 +150,7 @@ body {
   margin: 0;
   color: var(--color-muted-light);
 }
-/* Command name in the summary line, e.g. "/ping" */
+
 .cmd-name {
   font-family: var(--font-mono);
   font-size: 1em;
@@ -161,7 +158,6 @@ body {
   background: none;
   padding: 0;
 }
-/* Short description next to the command name */
 .cmd-desc {
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -178,7 +174,6 @@ body {
   max-width: none;
   margin: 0 0 0.75rem;
 }
-/* Section labels: Usage, Parameters, Permissions... */
 .expandable-body h4 {
   margin: 1.25rem 0 0.4rem;
   font-size: 0.8rem;
@@ -186,7 +181,6 @@ body {
   text-transform: uppercase;
   color: var(--color-muted-light);
 }
-/* Inline code, e.g. `-` or `table_name` */
 .expandable-body code,
 .docs-intro code,
 .docs-section > p code,
@@ -197,7 +191,6 @@ body {
   padding: 0.1em 0.4em;
   border-radius: 4px;
 }
-/* Code blocks for usage examples */
 .expandable-body pre {
   margin: 0 0 0.75rem;
   padding: 0.75rem 1rem;
@@ -237,13 +230,12 @@ body {
 .docs-steps li {
   margin-bottom: 0.4rem;
 }
-/* A group of commands, e.g. "Viewing rows" */
 .docs-section {
   width: min(1100px, 90%);
   margin: 2.5rem auto 0;
   text-align: left;
   line-height: 1.6;
-  scroll-margin-top: 80px; /* keeps headings clear of the sticky top bar */
+  scroll-margin-top: 80px;
 }
 .docs-section > h2,
 .docs-section > h3 {
@@ -263,7 +255,6 @@ body {
   margin: 0 0 0.75rem;
   color: var(--color-muted-light);
 }
-/* Expandable boxes inside a section already get their width from the section */
 .docs-section .container-expandable {
   width: 100%;
   margin: 0.75rem 0;
@@ -281,7 +272,6 @@ body {
 .expandable-body a:hover {
   text-decoration: underline;
 }
-/* Permission badges */
 .perm {
   display: inline-block;
   padding: 0.1rem 0.6rem;
@@ -294,7 +284,7 @@ body {
   border: 1px solid currentColor;
 }
 .container-expandable summary .perm {
-  margin-left: auto; /* push the badge to the right, before the +/× */
+  margin-left: auto;
   align-self: center;
 }
 .perm--everyone { color: var(--color-muted-light); }
@@ -418,6 +408,24 @@ p  { max-width: 68ch; margin-top: 0.75rem; }
 }
 
 .nav-link:hover {
+  color: var(--color-text);
+}
+
+.site-footer {
+  padding:     1.5rem 1rem;
+  text-align:  center;
+  font-family: var(--font-body);
+  font-size:   0.8rem;
+  color:       var(--color-muted);
+}
+
+.site-footer a {
+  color:      var(--color-muted);
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.site-footer a:hover {
   color: var(--color-text);
 }
 
@@ -675,6 +683,7 @@ p  { max-width: 68ch; margin-top: 0.75rem; }
   box-shadow: var(--shadow-glow);
   outline: none;
 }
+}
 /* .list
 {
   padding: 0;
@@ -688,4 +697,4 @@ p  { max-width: 68ch; margin-top: 0.75rem; }
   display: flex;
   max-height: 50px;
   border: 1px solid #ddd;
-  border-radius: 12px;} */
+  border-radius: 12px;}

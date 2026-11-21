@@ -6,6 +6,11 @@ fetch(base + 'header.html')
     document.getElementById('header').innerHTML = html;
   });
 
+const footer = document.createElement('footer');
+footer.className = 'site-footer';
+footer.innerHTML = 'Developed by <a href="https://github.com/V-5000-dev" target="_blank" rel="noopener">V-5000-Dev / Uncoded</a>';
+document.body.appendChild(footer);
+
 document.addEventListener('click', e => {
   const dropdown = document.getElementById('projects-dropdown');
   if (!dropdown) return;
